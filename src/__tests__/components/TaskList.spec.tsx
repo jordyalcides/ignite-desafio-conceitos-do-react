@@ -6,7 +6,7 @@ describe('App Page', () => {
   it('should be able to add a task', async () => {
     render(<TaskList />);
 
-    const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
+    const taskInput = screen.getByPlaceholderText('Add new todo');
     const addTaskButton = screen.getByTestId('add-task-button');
 
     fireEvent.change(taskInput, {
@@ -47,14 +47,14 @@ describe('App Page', () => {
 
     expect(screen.queryByTestId('task')).not.toBeInTheDocument();
 
-    const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
+    const taskInput = screen.getByPlaceholderText('Add new todo');
 
     fireEvent.change(taskInput, {
       target: {
         value: 'Desafio ReactJS Ignite'
       }
     });
-    
+
     fireEvent.click(addTaskButton);
 
     const addedFirstTaskTitle = screen.getByText('Desafio ReactJS Ignite');
@@ -65,7 +65,7 @@ describe('App Page', () => {
   it('should be able to remove a task', async () => {
     render(<TaskList />);
 
-    const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
+    const taskInput = screen.getByPlaceholderText('Add new todo');
     const addTaskButton = screen.getByTestId('add-task-button');
 
     fireEvent.change(taskInput, {
@@ -99,7 +99,7 @@ describe('App Page', () => {
   it('should be able to check a task', () => {
     render(<TaskList />);
 
-    const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
+    const taskInput = screen.getByPlaceholderText('Add new todo');
     const addTaskButton = screen.getByTestId('add-task-button');
 
     fireEvent.change(taskInput, {
